@@ -64,7 +64,9 @@ real-estate-management-system
 ├── src
 
 │   ├── main
+
 │   │   ├── java
+
 │   │   │   └── com.example.realestate
 │   │   │       ├── controllers
 │   │   │       ├── services
