@@ -69,10 +69,15 @@ real-estate-management-system
 │   │   ├── java
 
 │   │   │   └── com.example.realestate
+
 │   │   │       ├── controllers
+
 │   │   │       ├── services
+
 │   │   │       ├── repositories
+
 │   │   │       └── models
+
 │   └── resources
 └── pom.xml
 
