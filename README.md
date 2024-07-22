@@ -79,6 +79,7 @@ real-estate-management-system
 │   │   │       └── models
 
 │   └── resources
+
 └── pom.xml
 
 
@@ -152,16 +153,26 @@ Sale (For representing sales and rental transactions)
 Directory Structure
 
 real-estate-management-system
+
 │
 ├── src
+
 │   ├── main
+
 │   │   ├── java
+
 │   │   │   └── com.example.realestate
+
 │   │   │       ├── controllers
+
 │   │   │       ├── services
+
 │   │   │       ├── repositories
+
 │   │   │       └── models
+
 │   └── resources
+
 └── pom.xml
 
 Final Considerations
