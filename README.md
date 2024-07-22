@@ -59,26 +59,20 @@ Estrutura de Diretórios
 css
 Copiar código
 real-estate-management-system
+real-estate-management-system
 │
 ├── src
-│  
-├── main
-│   │  
-├── java
-│   │  
-│   └── com.example.realestate
-│
-│   │       ├── controllers
-│
-│   │       ├── services
-│
-│   │       ├── repositories
-│
-│   │       └── models
-│
-└── resources
 
+│   ├── main
+│   │   ├── java
+│   │   │   └── com.example.realestate
+│   │   │       ├── controllers
+│   │   │       ├── services
+│   │   │       ├── repositories
+│   │   │       └── models
+│   └── resources
 └── pom.xml
+
 
 Considerações Finais
 O Sistema de Gerenciamento de Imobiliária foi desenvolvido para ser uma solução robusta e escalável, capaz de atender às necessidades diárias de uma imobiliária. A organização modular facilita a manutenção e a expansão futura do sistema, seja pela adição de novas funcionalidades ou pela transição para uma arquitetura de micro serviços.
