@@ -61,14 +61,23 @@ Copiar código
 real-estate-management-system
 │
 ├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com.example.realestate
-│   │   │       ├── controllers
-│   │   │       ├── services
-│   │   │       ├── repositories
-│   │   │       └── models
-│   └── resources
+│  
+├── main
+│   │  
+├── java
+│   │  
+│   └── com.example.realestate
+│
+│   │       ├── controllers
+│
+│   │       ├── services
+│
+│   │       ├── repositories
+│
+│   │       └── models
+│
+└── resources
+
 └── pom.xml
 
 Considerações Finais
