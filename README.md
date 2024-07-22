@@ -70,6 +70,7 @@ real-estate-management-system
 │   │   │       └── models
 │   └── resources
 └── pom.xml
+
 Considerações Finais
 O Sistema de Gerenciamento de Imobiliária foi desenvolvido para ser uma solução robusta e escalável, capaz de atender às necessidades diárias de uma imobiliária. A organização modular facilita a manutenção e a expansão futura do sistema, seja pela adição de novas funcionalidades ou pela transição para uma arquitetura de micro serviços.
 
@@ -151,6 +152,7 @@ real-estate-management-system
 │   │   │       └── models
 │   └── resources
 └── pom.xml
+
 Final Considerations
 The Real Estate Management System is developed to be a robust and scalable solution capable of meeting the daily needs of a real estate agency. The modular organization facilitates easy maintenance and future expansion of the system, either by adding new features or transitioning to a microservices architecture.
 
