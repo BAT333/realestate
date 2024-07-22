@@ -2,8 +2,10 @@ package com.example.realestate.controller;
 
 import com.example.realestate.model.DataContract;
 import com.example.realestate.model.DataContractUpdateDTO;
+import com.example.realestate.model.DataRentDTO;
 import com.example.realestate.service.ContractService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -28,15 +30,15 @@ public class ContractController {
     }
     @PostMapping("rent/{buyer}/{purchase}")
     @Transactional
-    public ResponseEntity<DataContract> rent(@PathVariable("buyer")Long buyer,@PathVariable("purchase")Long purchase,UriComponentsBuilder builder){
-        var register = this.service.registerContractRent(buyer,purchase);
+    public ResponseEntity<DataContract> rent(@PathVariable("buyer")Long buyer, @PathVariable("purchase")Long purchase, @RequestBody @Valid DataRentDTO dto, UriComponentsBuilder builder){
+        var register = this.service.registerContractRent(buyer,purchase,dto);
         var uri = builder.path("rent/{id}").buildAndExpand(register.id()).toUri();
         return ResponseEntity.created(uri).body(register);
     }
     @PostMapping("season/{buyer}/{purchase}")
     @Transactional
-    public ResponseEntity<DataContract> season(@PathVariable("buyer")Long buyer,@PathVariable("purchase")Long purchase,UriComponentsBuilder builder){
-        var register = this.service.registerContractSeason(buyer,purchase);
+    public ResponseEntity<DataContract> season(@PathVariable("buyer")Long buyer,@PathVariable("purchase")Long purchase,@RequestBody @Valid DataRentDTO dto,UriComponentsBuilder builder){
+        var register = this.service.registerContractSeason(buyer,purchase,dto);
         var uri = builder.path("season/{id}").buildAndExpand(register.id()).toUri();
         return ResponseEntity.created(uri).body(register);
     }
@@ -56,5 +58,9 @@ public class ContractController {
         return ResponseEntity.noContent().build();
 
     }
-
+    @PutMapping("survey/{id}")
+    @Transactional
+    public ResponseEntity<String> updateSurvey(@PathVariable("id")Long id, DataContractUpdateDTO dto){
+        return ResponseEntity.ok(this.service.updateSurvey(id,dto));
+    }
 }

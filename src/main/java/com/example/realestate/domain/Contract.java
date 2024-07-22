@@ -26,8 +26,6 @@ public class Contract {
     @Column(name = "types",nullable = false)
     @Enumerated(EnumType.STRING)
     private ContractType type;
-    @Column(name = "duration",nullable = false)
-    private String duration;
     @Column(name = "contract_creation",nullable = false)
     private LocalDate date = LocalDate.now();
     @Column(name ="actives",nullable = false)
@@ -40,8 +38,12 @@ public class Contract {
     private Proprietor modern;
     @OneToOne(fetch = FetchType.LAZY)
     private Propertie properties;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "rent",unique = true)
+    private RentContract rentContract;
 
-    public Contract(Propertie propertie, Proprietor proprietor,ContractType type,String duration) {
+
+    public Contract(Propertie propertie, Proprietor proprietor,ContractType type) {
         this.price = propertie.getPrice();
         this.description = propertie.getDescription();
         this.type = type;
@@ -49,14 +51,11 @@ public class Contract {
         this.old = propertie.getProprietor();
         this.modern = proprietor;
         this.properties = propertie;
-        this.duration = duration;
         this.date = LocalDate.now();
     }
 
     public void update(DataContractUpdateDTO dto) {
-        if(dto.duration() != null ){
-            this.duration = dto.duration();
-        }
+
         if(dto.description() != null){
             this.description = dto.description();
         }

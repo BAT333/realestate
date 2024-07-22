@@ -5,7 +5,6 @@ import java.math.BigDecimal;
 public record DataContractUpdateDTO(
         BigDecimal price,
 
-        String description,
-        String duration
+        String description
 ) {
 }

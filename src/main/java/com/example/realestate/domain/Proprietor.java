@@ -37,6 +37,9 @@ public class Proprietor {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "logins",nullable = false,unique = true)
     private User login;
+    @Column(name = "types",nullable = false)
+    @Enumerated(EnumType.STRING)
+    private ClientType type;
 
 
     public Proprietor(DataProprietorDTO dto) {
